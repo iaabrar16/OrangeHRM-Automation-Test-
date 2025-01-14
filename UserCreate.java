@@ -25,7 +25,6 @@ public class UserCreate {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
 
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         // Enter the username (invalid)
@@ -41,9 +40,7 @@ public class UserCreate {
         try_loginBtn.click();
 
 
-
         Thread.sleep(5000);
-
 
 
         // Enter the username (valid)
@@ -84,7 +81,7 @@ public class UserCreate {
         WebElement toggle_bar = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[2]/div/label/span"));
         toggle_bar.click();
 
-
+        // Wait for 1 seconds to observe it
         Thread.sleep(1000);
 
 
@@ -100,7 +97,7 @@ public class UserCreate {
         WebElement confirmPasswordInput = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[4]/div/div[2]/div/div[2]/input"));
         confirmPasswordInput.sendKeys("Aabrar123@");
 
-
+        // Wait for 2 seconds to observe it
         Thread.sleep(2000);
 
 
@@ -120,7 +117,7 @@ public class UserCreate {
         // Wait for 2 seconds to observe it
         Thread.sleep(2000);
 
-
+        // Logout
         WebElement logout = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[3]/ul/li/ul/li[4]/a"));
         logout.click();
 
