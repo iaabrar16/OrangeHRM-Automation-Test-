@@ -25,24 +25,6 @@ public class UserCreate {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-        // Enter the username (invalid)
-        WebElement userNameInput = driver.findElement(By.name("username"));
-        userNameInput.sendKeys("admin");
-
-        // Enter the username (invalid)
-        WebElement passwordInput = driver.findElement(By.name("password"));
-        passwordInput.sendKeys("Admin123");
-
-        // Locate the login button and click
-        WebElement try_loginBtn = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
-        try_loginBtn.click();
-
-
-        Thread.sleep(5000);
-
-
         // Enter the username (valid)
         WebElement UserNameInput = driver.findElement(By.name("username"));
         UserNameInput.sendKeys("Admin");
