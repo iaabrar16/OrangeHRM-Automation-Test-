@@ -42,12 +42,15 @@ public class SearchEmployee {
         WebElement PIM_Menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a"));
         PIM_Menu.click();
 
+        // Locate the employeeName input and send value
         WebElement employeeName = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div/input"));
         employeeName.sendKeys("Ismail Aabrar");
 
+        // Locate the employeeId input and send value
         WebElement employeeId = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/input"));
         employeeId.sendKeys("0403");
 
+        // Locate the save button and click
         WebElement save_button = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]"));
         save_button.click();
 
