@@ -93,6 +93,7 @@ public class UserCreate {
         // Wait for 5 seconds to observe it
         Thread.sleep(5000);
 
+        // Profile Menu click
         WebElement name_bar = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[3]/ul/li/span"));
         name_bar.click();
 

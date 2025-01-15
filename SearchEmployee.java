@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginTest {
+public class SearchEmployee {
     static WebDriver driver;
 
     public static void main(String[] args) throws InterruptedException {
@@ -25,24 +25,6 @@ public class LoginTest {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-        // Enter the username (invalid)
-        WebElement userNameInput = driver.findElement(By.name("username"));
-        userNameInput.sendKeys("admin");
-
-        // Enter the username (invalid)
-        WebElement passwordInput = driver.findElement(By.name("password"));
-        passwordInput.sendKeys("Admin123");
-
-        // Locate the login button and click
-        WebElement try_loginBtn = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
-        try_loginBtn.click();
-
-
-        Thread.sleep(5000);
-
-
         // Enter the username (valid)
         WebElement UserNameInput = driver.findElement(By.name("username"));
         UserNameInput.sendKeys("Admin");
@@ -54,6 +36,22 @@ public class LoginTest {
         // Locate the login button and click
         WebElement loginBtn = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
         loginBtn.click();
+
+
+        // Locate the PIM menu and click
+        WebElement PIM_Menu = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a"));
+        PIM_Menu.click();
+
+        WebElement employeeName = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div/input"));
+        employeeName.sendKeys("Ismail Aabrar");
+
+        WebElement employeeId = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/input"));
+        employeeId.sendKeys("0403");
+
+        WebElement save_button = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]"));
+        save_button.click();
+
+
 
 
         // Wait for 2 seconds to observe it
@@ -69,6 +67,7 @@ public class LoginTest {
         // Logout
         WebElement logout = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[3]/ul/li/ul/li[4]/a"));
         logout.click();
+
 
         // Wait for 5 seconds to observe it
         Thread.sleep(5000);
